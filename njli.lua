@@ -5,7 +5,7 @@
 -- Earlier versins used love_api.lua from http://love2d.org/forums/viewtopic.php?f=3&t=1796&start=50#p166908
 -- the conversion script is at the bottom of this file
 
-local love = {
+local njli = {
  childs = {
   audio = {
    childs = {
@@ -6480,10 +6480,10 @@ local love = {
  type = "lib"
 }
 
-do return {love = love} end
+do return {njli = njli} end
 
 -- the following code is used to convert love_api.lua to a proper format
-love = dofile('love_api.lua')
+njli = dofile('love_api.lua')
 
 -- conversion script
 local function convert(l)
@@ -6563,4 +6563,4 @@ end
 
 package.path = package.path .. ';../../lualibs/?/?.lua;../../lualibs/?.lua'
 package.cpath = package.cpath .. ';../../bin/clibs/?.dll'
-print((require 'mobdebug').line(convert(love), {indent = ' ', comment = false}))
+print((require 'mobdebug').line(convert(njli), {indent = ' ', comment = false}))
